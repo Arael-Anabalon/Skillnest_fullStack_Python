@@ -63,7 +63,7 @@ def tablaPresonalizada():
 def sumatoriaCentinela():
     sumaTotal = 0
     while True:
-        num = int(input("Ingresa un número: "))
+        num = int(input("Ingresa un número (Negativo para salir): "))
         if num < 0:
             break
         sumaTotal += num
@@ -103,13 +103,11 @@ def validadorPassword():
 def registroNombres():
     nombres = []
     print("Por favor, ingresa 5 nombres")
-    for i in range(5):
-        nombre = input(f"Nombre N°{i + 1}: ")
-        if nombre != "":
-            nombres.append(nombre)
-        else:
-            print("Tienes que ingresar un nombre.")
-    print(reversed(nombres))
+    while len(nombres) < 5:
+        nombre = input(f"Nombre N°{len(nombres) + 1}: ")
+        nombres.append(nombre)
+    print("\nNombres en orden inverso:")
+    print(nombres[::-1])
 
 
 
