@@ -1,5 +1,5 @@
 """
-Funciones básicas 1.
+Funciones básicas 1
 """
 
 # 1. Función que retorna la cantidad de logros desbloqueados en un videojuego.
@@ -145,6 +145,8 @@ print(duracion_suscripcion(7, 4) + duracion_suscripcion(1, 3))
 
 
 
+
+
 # 10. Suma de propinas que recibes en un juego de simulación (p.ej. "Cafetería Virtual").
 # Nota que hay dos return, pero el segundo no se ejecuta nunca.
 def suma_propinas(a, b):
@@ -177,7 +179,7 @@ mostrar_horas_local()
 print(horas_de_juego)
 # Variables         | Valores
 # horas_de_juego    | 150 - 350
-# Salida: 150 - 350 - 150
+# Salida: 150 - 150 - 350 - 150
 
 
 
@@ -195,6 +197,12 @@ def mostrar_horas_local():
 print(horas_de_juego)
 mostrar_horas_local()
 print(horas_de_juego)
+# Variables         | Valores
+# horas_de_juego    | 150 - 350
+# Salida: 150 - 150 - 350 - 150
+
+
+
 
 
 # 13. Ahora reasignamos la variable global con el valor que retorna la función.
@@ -209,6 +217,12 @@ def mostrar_horas_local():
 print(horas_de_juego)
 horas_de_juego = mostrar_horas_local()
 print(horas_de_juego)
+# Variables         | Valores
+# horas_de_juego    | 150 - 350
+# Salida: 150 - 350
+
+
+
 
 
 # 14. Una función que primero muestra la cantidad de seguidores en tu canal, luego llama a otra función para mostrar "Likes".
@@ -221,6 +235,15 @@ def mostrar_likes():
     print("Likes: 120")
 
 mostrar_seguidores()
+# Variables|Valores
+# (Ninguna)|
+# Salida: 
+# Seguidores: 300
+# Likes: 120
+# Finalizando conteo
+
+
+
 
 
 # 15. Función que muestra "Reproducciones" de un tema musical y recibe un valor de otra función,
@@ -237,3 +260,9 @@ def calcular_incremento():
 
 b = mostrar_reproducciones()
 print(b)
+# Variables|Valores
+# a | 1
+# b | 4
+# Salida:
+# Reproducciones: 5000
+# Incremento calculado: (1 - 4)
