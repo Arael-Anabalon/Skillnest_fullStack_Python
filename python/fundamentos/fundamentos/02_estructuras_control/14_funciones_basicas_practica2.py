@@ -5,7 +5,7 @@ Funciones básicas 2
 # Calcula experiencia
 def multiplica_por_2(numLimite):
     pares = []
-    for i in range(numLimite):
+    for i in range(numLimite + 1):
         pares.append(i * 2)
     return pares
         
@@ -18,10 +18,9 @@ multiplica_por_2(5)
 
 
 # Analiza publicaciones
-def suma_y_resta(num1, num2):
-    print(num1 + num2)
-    return num1 - num2
-
+def suma_y_resta(nums):
+    print(nums[0] + nums[1])
+    return nums[0] - nums[1]
 suma_y_resta([120, 115])
 # Imprime: 235 y retorna: 5
 
@@ -31,9 +30,10 @@ suma_y_resta([120, 115])
 
 # Puntaje ajustado
 def sumatoria_menos_longitud(valores):
+    sumaTotal = 0
     for i in range(len(valores)):
         sumaTotal += valores[i]
-    longitud = valores[i]
+    longitud = len(valores)
     return sumaTotal - longitud
 
 sumatoria_menos_longitud([10, 5, 3, 7])
@@ -45,11 +45,16 @@ sumatoria_menos_longitud([10, 5, 3, 7])
 
 # Ajusta visualizaciones
 def valores_multiplicados_segundo(valores):
-    for i in range(len(valores)):
-        por3 = valores[i] * 3
+    retorno = []
     cantidadValores = len(valores)
     print(cantidadValores)
-    return por3
+    for i in range(cantidadValores):
+        if cantidadValores <= 1:
+            retorno = []
+        else:
+            retorno.append(valores[i] * 3)
+    return retorno 
+
 
 valores_multiplicados_segundo([100, 3, 50, 20])
 # Imprime: 4 y retorna: [300, 9, 150, 60]
@@ -62,7 +67,9 @@ valores_multiplicados_segundo([100])
 
 
 # Genera precio fijo
-def valor_multiplicado_logitud(num1, num2):
+def valor_multiplicado_longitud(num1, num2):
+    retorno = num1 * num2
+    return [retorno] * num2
     
 
 valor_multiplicado_longitud(5, 2)
