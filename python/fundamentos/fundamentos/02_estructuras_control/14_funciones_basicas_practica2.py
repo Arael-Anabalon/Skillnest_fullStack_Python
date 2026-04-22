@@ -2,7 +2,7 @@
 Funciones básicas 2
 """
 
-# Calcula experiencia
+# 1. Calcula experiencia
 def multiplica_por_2(numLimite):
     pares = []
     for i in range(numLimite + 1):
@@ -17,7 +17,7 @@ multiplica_por_2(5)
 
 
 
-# Analiza publicaciones
+# 2. Analiza publicaciones
 def suma_y_resta(nums):
     print(nums[0] + nums[1])
     return nums[0] - nums[1]
@@ -28,7 +28,7 @@ suma_y_resta([120, 115])
 
 
 
-# Puntaje ajustado
+# 3. Puntaje ajustado
 def sumatoria_menos_longitud(valores):
     sumaTotal = 0
     for i in range(len(valores)):
@@ -43,7 +43,7 @@ sumatoria_menos_longitud([10, 5, 3, 7])
 
 
 
-# Ajusta visualizaciones
+# 4. Ajusta visualizaciones
 def valores_multiplicados_segundo(valores):
     retorno = []
     cantidadValores = len(valores)
@@ -66,7 +66,7 @@ valores_multiplicados_segundo([100])
 
 
 
-# Genera precio fijo
+# 5. Genera precio fijo
 def valor_multiplicado_longitud(num1, num2):
     retorno = num1 * num2
     return [retorno] * num2
