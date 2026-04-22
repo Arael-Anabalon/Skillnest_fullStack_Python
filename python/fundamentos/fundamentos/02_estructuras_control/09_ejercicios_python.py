@@ -116,7 +116,7 @@ def promedioNotas():
     cantidad = int(input("Cuantas notas desea ingresar?: "))
     sumaNotas = 0
     for i in range(cantidad):
-        notas = int(input(f"Ingrese la nota N°{i}: "))
+        notas = int(input(f"Ingrese la nota N°{i + 1}: "))
         sumaNotas += notas
     promedio = sumaNotas / cantidad
     print(f"Notas ingresadas: {cantidad} \nPromedio: {promedio}")
@@ -129,7 +129,7 @@ def filtroArrays():
     valores = []
     mayor50 = []
     for i in range(cantidad):
-        valores = int(input(f"Ingrese el valor N°{i}: "))
+        valores = int(input(f"Ingrese el valor N°{i + 1}: "))
         if valores > 50:
             mayor50.append(valores)
     print(f"Cantidad de valores: {cantidad} \nValores mayor a 50: {mayor50}")
@@ -139,12 +139,13 @@ def filtroArrays():
 # 12. Buscador de Elementos
 def buscadorElemento():
     ciudades = ["Miami", "Lima", "Tokio", "París", "Nueva York", "Roma", "Buenos Aires", "Estambul", "Kioto", "Londres"]
-    ciudad = input("Ingresar ciudad (con mayus al principio): ").capitalize()
-    esta = ciudades.index(ciudad)
-    if esta < int(ciudades):
+    ciudad = input("Ingresar ciudad (con máyus al principio): ").capitalize()
+    if ciudad in ciudades:
+        esta = ciudades.index(ciudad)
         print(f"Tu ciudad esta en el arreglo, en la posicion {esta}")
     else:
         print("Tu ciudad no esta en el arreglo.")
+
 
 
 
