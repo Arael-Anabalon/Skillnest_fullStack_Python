@@ -22,7 +22,7 @@ def puntaje_carlos(lista):
 puntaje_carlos(datos)
 
 # 3. Crear función que reciba "nombre" o "puntaje" e imprima solo esos valores
-def recibir_nombre_apellido(lista):
+def recibir_nombre_puntaje(lista):
     opcion = input("Nombre/Puntaje: ")
     if opcion == "Nombre":
         print("Nombres almacenados:")
@@ -35,4 +35,4 @@ def recibir_nombre_apellido(lista):
     else:
         print("Ingrese un valor válido")
 
-recibir_nombre_apellido(datos)
+recibir_nombre_puntaje(datos)
