@@ -15,7 +15,9 @@ def recibirNums():
 
 # 2. Crear una función que reciba una cadena de texto y cuente cuántas vocales contiene.
 def devolverVocales(texto):
-    vocales = "aeiouAEIOU"
+    for i in texto[i]:
+        
+
     
 
 def recibirCadena():
@@ -66,4 +68,98 @@ def recibirNotas():
     promedioFinal = calcularPromedio(listaNotas)
     aprobadoReprobado(promedioFinal, estudiante)
 
-recibirNotas()
+
+
+# 5. Crear una función que reciba una lista de precios de productos y aplique un descuento del 10%, mostrando el valor original y el nuevo valor.
+def mostrarDescuento(productos, precios):
+    descuento = 0.1
+    conDescuento = []
+    for i in range(len(productos)):
+        valor = precios[i] * (1 - descuento)
+        conDescuento.append(valor)
+        print(f"Producto: {productos[i]}\nPrecio original: ${precios[i]}\nPrecio con descuento: ${conDescuento[i]}")
+
+def recibirProductos():
+    cantidad = int(input("Ingrese la cantidad de productos: "))
+    listaProductos = []
+    listaPrecios = []
+    for i in range(cantidad):
+        producto = input(f"{i + 1}. ")
+        listaProductos.append(producto)
+        precio = int(input(f"Ingrese el valor de {producto}: "))
+        listaPrecios.append(precio)
+    mostrarDescuento(listaProductos, listaPrecios)
+
+
+
+# 6. Crear una función que reciba un número entero y determine si es par o impar.
+def parImpar(numero):
+    if numero % 2 == 0:
+        print(f"El número {numero} es Par.")
+    elif numero % 3 == 0:
+        print(f"El número {numero} es Impar.")
+
+def recibirNum():
+    num = int(input("Ingrese un número: "))
+    parImpar(num)
+
+
+
+# 7. Crear una función que reciba una lista de edades y muestre cuántas personas son mayores de edad (18 años o más).
+def mayoresEdad(edades):
+    mayoresEdad = 0
+    for i in range(len(edades)):
+        if edades[i] >= 18:
+            mayoresEdad += 1
+    print(f"En la lista de edades {mayoresEdad} personas son mayores de edad.")
+
+def recibirEdades():
+    cantidad = int(input("Ingrese la cantidad de edades: "))
+    listaEdades = []
+    for i in range(cantidad):
+        edad = int(input(f"Edad N°{i +1}: "))
+        listaEdades.append(edad)
+    mayoresEdad(listaEdades)
+
+
+
+# 8. Crear una función que reciba una lista de palabras y permita buscar cuántas veces aparece una palabra específica ingresada por el usuario.
+def vecesAparece(palabras):
+    buscar = input("Ingresa la palabra que deseas buscar: ")
+    cantidadEncontrada = 0
+    for i in range(len(palabras)):
+        if buscar == palabras[i]:
+            cantidadEncontrada += 1
+    print(f"La palabra {buscar} ah sido encontrada {cantidadEncontrada} veces en la lista de palabras.")
+
+def recibirPalabras():
+    cantidad = int(input("Ingrese la cantidad de palabras: "))
+    listapalabras = []
+    for i in range(cantidad):
+        palabra = input(f"{i + 1}. ")
+        listapalabras.append(palabra)
+    vecesAparece(listapalabras)
+
+
+
+# 9. Crear una función que reciba una lista de números y genere una nueva lista que contenga únicamente los números positivos.
+def numsPositivos(numeros):
+    positivos = 0
+    lista = []
+    for i in range(len(numeros)):
+        if numeros[i] > 0:
+            positivos += 1
+            lista.append(numeros[i])
+    print(f"LA lista enviada tiene {positivos} números positivos:\n{lista}")
+
+def recibirNums2():
+    cantidad = int(input("Cantidad de números a ingresar: "))
+    cadena = []
+    for i in range(cantidad):
+        num = int(input(f"{i + 1}. "))
+        cadena.append(num)
+    numsPositivos(cadena)
+
+
+
+# 10. Crear una función que reciba una lista de productos (utilizando diccionarios con nombre y stock) y muestre cuáles tienen un stock menor a 5 unidades.
