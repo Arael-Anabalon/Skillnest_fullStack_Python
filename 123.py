@@ -1,3 +1,7 @@
+import os
+def clsConsola():
+    os.system('cls')
+
 # 1. Crear una función que reciba una lista de números enteros y muestre cuál es el número mayor y cuál es el menor.
 def mayor_menor(numeros):
     numMenor = min(numeros)
@@ -13,13 +17,15 @@ def recibirNums():
     mayor_menor(cadena)
 
 
+
 # 2. Crear una función que reciba una cadena de texto y cuente cuántas vocales contiene.
 def devolverVocales(texto):
-    for i in texto[i]:
+    vocales = 0
+    for i in texto.lower():
+        if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
+            vocales +=1
+    print(f'El texto enviado "{texto}" contiene {vocales} vocales.')
         
-
-    
-
 def recibirCadena():
     cadena = input("Ingrese una palabra: ")
     devolverVocales(cadena)
@@ -163,3 +169,80 @@ def recibirNums2():
 
 
 # 10. Crear una función que reciba una lista de productos (utilizando diccionarios con nombre y stock) y muestre cuáles tienen un stock menor a 5 unidades.
+def stockMenor5(productos):
+    print(f"Lista de productos ingresados:\n{productos}")
+    for nombre, cantidad in productos.items():
+        if cantidad < 5:
+            print(f"Producto con menos de 5 unidades!\nProducto: {nombre}\nStock: {cantidad}")
+
+productos = {}
+def agregarProductos():
+    cantidad = int(input("Cantidad de productos que ingresará: "))
+    for i in range(cantidad):
+        producto = input(f"Nombre del producto N°{i + 1}: ")
+        stock = int(input(f"Unidades de {producto} que ingresará: "))
+        productos[producto] = stock
+    stockMenor5(productos)
+
+
+
+continuar = True
+while continuar:
+    print("\n---Ejercicios Python---")
+    print("---Ejercicio 1---")
+    print("---Ejercicio 2---")
+    print("---Ejercicio 3---")
+    print("---Ejercicio 4---")
+    print("---Ejercicio 5---")
+    print("---Ejercicio 6---")
+    print("---Ejercicio 7---")
+    print("---Ejercicio 8---")
+    print("---Ejercicio 9---")
+    print("---Ejercicio 10---")
+    opcion = input("\n---Elije una opción: (1-10) (0 para salir)")
+    if opcion == "1":
+        print("\nEjecutar ejercicio 1: ")
+        clsConsola()
+        recibirNums()
+    elif opcion == "2":
+        print("\nEjecutar ejercicio 2: ")
+        clsConsola()
+        recibirCadena()
+    elif opcion == "3":
+        print("\nEjecutar ejercicio 3: ")
+        clsConsola()
+        ingresarNombres()
+    elif opcion == "4":
+        print("\nEjecutar ejercicio 4: ")
+        clsConsola()
+        recibirNotas()
+    elif opcion == "5":
+        print("\nEjecutar ejercicio 5: ")
+        clsConsola()
+        recibirProductos()
+    elif opcion == "6":
+        print("\nEjecutar ejercicio 6: ")
+        clsConsola()
+        recibirNum()
+    elif opcion == "7":
+        print("\nEjecutar ejercicio 7: ")
+        clsConsola()
+        recibirEdades()
+    elif opcion == "8":
+        print("\nEjecutar ejercicio 8: ")
+        clsConsola()
+        recibirPalabras()
+    elif opcion == "9":
+        print("\nEjecutar ejercicio 9: ")
+        clsConsola()
+        recibirNums2()
+    elif opcion == "10":
+        print("\nEjecutar ejercicio 10: ")
+        clsConsola()
+        agregarProductos()
+    elif opcion == "0":
+        print("Saliendo...")
+        clsConsola()
+        continuar = False
+    else:
+        print("Opción no válido. Intenta otra vez.")
