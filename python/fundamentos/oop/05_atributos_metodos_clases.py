@@ -56,10 +56,7 @@ print(f"Totál estudiantes: {Estudiante.cantidadEstudiantes()}")
 
 # Método estático:
 print(" <== MÉTODO ESTÁTICO ==> ")
-
-
-
-
+# WIP
 
 # Función de repaso:
 def validadorDatos(usuario, contrasena):
