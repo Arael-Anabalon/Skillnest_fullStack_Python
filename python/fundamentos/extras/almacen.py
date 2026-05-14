@@ -54,3 +54,8 @@ membresiaValida = CafeteriaCliente.validar_membresia("Oro")
 print(membresiaValida)
 membresiaInvalida = CafeteriaCliente.validar_membresia("Platino")
 print(membresiaInvalida)
+
+
+
+
+   
