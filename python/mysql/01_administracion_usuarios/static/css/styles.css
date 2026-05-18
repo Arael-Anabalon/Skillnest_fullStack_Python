@@ -1,4 +1,29 @@
 .container {
     display: flex;
-    width: 1200px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-content {
+    display: flex;
+}
+
+.form-izq {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.form-der {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-btn {
+    margin: 20px;
+    padding: 0px;
 }
