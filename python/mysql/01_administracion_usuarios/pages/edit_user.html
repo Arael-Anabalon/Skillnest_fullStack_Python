@@ -5,26 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="araelanabalon@liceovvh.cl">
-    <title>A Web Page</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+    <title>Nuevo Usuario</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 
 <body>
     <div class="container">
         <form action="#">
-            <h2>Iniciar sesión</h2>
-            <div class="form-field">
-                <label for="email">E-mail</label>
-                <input type="text" id="email">
-            </div>
-            <div class="form-field">
-                <label for="pass">Contraseña</label>
-                <input type="password" id="pass">
-            </div>
-            <button type="submit" class="form-btn">Iniciar Sesión</button>
-        </form>
-        <form action="#">
-            <h2>Registro</h2>
+            <h2>Editar Usuario</h2>
             <div class="form-field">
                 <label for="name">Nombre</label>
                 <input type="text" id="name">
@@ -41,7 +29,15 @@
                 <label for="passConfirm">Conf. Contraseña</label>
                 <input type="password" id="passConfirm">
             </div>
-            <button type="submit" class="form-btn">Registrar</button>
+            <div class="form-field">
+                <label for="userType">Tipo de Usuario</label>
+                <select name="userType" id="userType" required>
+                    <option value="#" disabled selected>Selecciona una opción</option>
+                    <option value="admin">Administrador</option>
+                    <option value="user">Usuario</option>
+                </select>
+            </div>
+            <button type="submit" class="form-btn">Guardar</button>
         </form>
     </div>
 </body>
