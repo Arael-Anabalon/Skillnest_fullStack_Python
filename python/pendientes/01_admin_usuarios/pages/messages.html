@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="araelanabalon@liceovvh.cl">
+    <title>A Web Page - Mensajes</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="msg-section">
+            <header>
+                <h1 class="username-display">Usuario</h1>
+            </header>
+            <form action="#">
+                <div class="send-msg">
+                    <div class="form-field">
+                        <label for="msg">
+                            <h2>Mensajes a <span class="username-display">Usuario</span></h2>
+                        </label>
+                        <input type="text" id="msg" placeholder="Escribe un comentario . . .">
+
+                    </div>
+                    <button class="custom-btn">Enviar</button>
+                </div>
+            </form>
+        </section>
+        <section class="discussion-section">
+            <ul class="post">
+                <li>
+                    <article>
+                        <a href="#">Mensaje de <span class="username-msg-display">Usuario(msg)</span> hace <time datetime="0000-00-00T00:00:00">X</time> horas</a>
+                        <div class="msg">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minima eligendi atque,
+                                voluptatum iure nulla quibusdam!</p>
+                        </div>
+                    </article>
+                    <ul class="comments">
+                        <li>
+                            <article>
+                                <a href="#">Comentario de <span class="username-comment-display">Usuario(comment)</span> hace <time datetime="0000-00-00T00:00:00">X</time> horas</a>
+                                <div class="msg">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minima eligendi
+                                        atque, voluptatum iure nulla quibusdam!</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+
+</html>

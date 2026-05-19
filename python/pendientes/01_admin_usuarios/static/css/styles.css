@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.custom-btn { 
+    padding: 5px;
+    margin: 10px;
+    align-self: center;
+} 
+
+form {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px 10px;
+}
+
+.form-field input {
+    padding: 10px;
+}
