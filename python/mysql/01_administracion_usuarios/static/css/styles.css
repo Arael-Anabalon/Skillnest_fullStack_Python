@@ -91,6 +91,18 @@ td {
     padding: 5px;
 }
 
+.comments {
+    display: flex;
+    justify-content: end;
+}
+
+.comments h2 {
+    margin: 10px 0px;
+}
+
+.comments-list {
+    width: 90%;
+}
 
 
 
