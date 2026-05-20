@@ -119,4 +119,16 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 USE sistema_mensajes;
-INSERT INTO usuarios(nombre_usuario) VALUES ("Isidora")
+INSERT INTO roles(nombre_rol, descripcion_rol)
+VALUES ("admin", "Administrador, posee contorl total."),
+("usuario", "Usuario, posee permisos básicos.")
+("invitado", "Usuario temporal, posee permisos limitados.")
+
+INSERT INTO usuarios(nombre, password_hash, email, id_rol)
+VALUES ("randyGlock", "randy123", "randy@gmail.com", "2"),
+("akon123", "123456", "akonnn@gmail.com", "3"),
+("Teteee", "tete321", "tete@gmail.com", "1"),
+("anne", "ann09876" "annerill@gmail.com", "1"),
+("Arsu", "mati321", "matirios@gmail.com", "2")
+
+SELECT * FROM usuarios;
