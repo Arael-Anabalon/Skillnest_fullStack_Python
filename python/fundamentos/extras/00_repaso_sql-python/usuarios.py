@@ -3,9 +3,7 @@ from conexion import Conexion
 
 class Usuario:
 
-    def __init__(
-        self, usuario=None, contrasena=None, tipo_usuario=1, created_by="Admin"
-    ):
+    def __init__(self, usuario=None, contrasena=None, tipo_usuario=1, created_by="Admin"):
         self.username = usuario
         self.password = contrasena
         self.tipo_usuario = tipo_usuario
