@@ -8,7 +8,7 @@ class Conexion:
             host = "localhost",
             user = "root",
             password = "1234",
-            database = "colegio"
+            database = "Usuarios_DB"
         )
         
         return conexion
