@@ -6,9 +6,8 @@ def cls_consola():
     os.system("cls")
 
 
-# Variables para controlar el estado de la sesión
-usuario_logeado = None  
-tipo_sesion = None 
+usuario_logeado = None
+tipo_sesion = None
 
 while True:
     print("\n--- SISTEMA DE USUARIOS ---")
@@ -17,7 +16,6 @@ while True:
         print(f"Sesión activa: {usuario_logeado} | Rol: {rol_texto}")
     else:
         print("Estado: No has iniciado sesión. (Usa la opción 6 para ingresar)")
-
     print("-" * 27)
     print("1. Registrar usuario (Solo Admin)")
     print("2. Buscar usuario (Solo Admin)")
@@ -26,31 +24,24 @@ while True:
     print("5. Eliminar usuario (Solo Admin)")
     print("6. Iniciar Sesión / Cerrar Sesión")
     print("0. Salir del programa")
-
     opcion = input("\nIngrese una opción: ")
 
     if opcion in ["1", "2", "3", "4", "5"]:
         if not usuario_logeado:
             cls_consola()
-            print(
-                "Acceso denegado: Debes iniciar sesión primero (Opción 6)."
-            )
+            print("Acceso denegado: Debes iniciar sesión primero (Opción 6).")
             continue
-        if tipo_sesion != 2:  # Si no es Admin (tipo 2)
+        if tipo_sesion != 2:
             cls_consola()
-            print(
-                "Acceso denegado: Tu cuenta no tiene permisos de Administrador."
-            )
+            print("Acceso denegado: Tu cuenta no tiene permisos de Administrador.")
             continue
 
-    # --- EJECUCIÓN DE LAS OPCIONES ---
     if opcion == "1":
         cls_consola()
         username = input("Ingrese un nombre de usuario: ")
         password = input("Ingrese una contraseña: ")
         print("Tipos disponibles: 1 = Usuario, 2 = Admin")
         tipo = int(input("Ingrese el tipo de usuario (1 o 2): "))
-        
         usuario = Usuario(username, password, tipo_usuario=tipo)
         usuario.crear_usuario()
 
@@ -59,11 +50,9 @@ while True:
         id_buscar = input("Ingrese el ID del usuario a buscar: ")
         resultado = Usuario.buscar_usuario(id_buscar)
         if resultado:
-            print(f"\nID: {resultado[0]}")
-            print(f"Usuario: {resultado[1]}")
-            print(
-                f"Tipo: {resultado[2]} ({'Admin' if resultado[2] == 2 else 'Usuario'})"
-            )
+            print(f"\nID: {resultado}")
+            print(f"Usuario: {resultado}")
+            print(f"Tipo: {resultado} ({'Admin' if resultado == 2 else 'Usuario'})")
         else:
             print("Usuario no encontrado.")
 
@@ -73,8 +62,8 @@ while True:
         if usuarios:
             print("\n--- LISTADO DE USUARIOS ---")
             for u in usuarios:
-                rol = "Admin" if u[2] == 2 else "Usuario"
-                print(f"ID: {u[0]} | Usuario: {u[1]} | Rol: {rol}")
+                rol = "Admin" if u == 2 else "Usuario"
+                print(f"ID: {u} | Usuario: {u} | Rol: {rol}")
         else:
             print("No hay usuarios registrados.")
 
@@ -93,21 +82,18 @@ while True:
 
     elif opcion == "6":
         cls_consola()
-        # Si ya hay sesión, la opción 6 funciona como CERRAR SESIÓN
         if usuario_logeado:
             Usuario.cerrar_sesion(usuario_logeado)
             usuario_logeado = None
             tipo_sesion = None
-        # Si no hay sesión, funciona como INICIAR SESIÓN
         else:
             print("--- INICIAR SESIÓN ---")
             user = input("Usuario: ")
             password = input("Contraseña: ")
             resultado = Usuario.validar_acceso(user, password)
-
             if resultado:
-                usuario_logeado = resultado[1]  # Guarda el nombre de usuario
-                tipo_sesion = resultado[2]  # Guarda el tipo (1 o 2)
+                usuario_logeado = resultado
+                tipo_sesion = resultado
                 cls_consola()
                 print(f"¡Bienvenido de nuevo, {usuario_logeado}!")
             else:
