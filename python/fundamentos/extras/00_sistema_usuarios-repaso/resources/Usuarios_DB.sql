@@ -21,7 +21,8 @@ created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 created_by VARCHAR(50),
 updated_by VARCHAR(50),
-deleted TINYINT DEFAULT 0
+deleted TINYINT DEFAULT 0,
+CONSTRAINT fk_usuarios_tipo FOREIGN KEY (tipo_usuario) REFERENCES tipo_usuarios(id_tipo_usuario) 
 );
 
 INSERT INTO tipo_usuarios (nombre_tipo, descripcion, created_by)
@@ -31,4 +32,4 @@ VALUES
     
 INSERT INTO usuarios (usuario, contrasena, tipo_usuario, created_by)
 VALUES
-	("Arael", "ara173", "1", "system");
+	("Arael", "ara173", 1, "system");

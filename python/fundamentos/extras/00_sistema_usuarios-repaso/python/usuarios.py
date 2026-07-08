@@ -3,9 +3,7 @@ from conexion import Conexion
 
 class Usuario:
 
-    def __init__(
-        self, usuario=None, contrasena=None, tipo_usuario=1, created_by="Admin"
-    ):
+    def __init__(self, usuario=None, contrasena=None, tipo_usuario = 1, created_by="Admin"):
         self.username = usuario
         self.password = contrasena
         self.tipo_usuario = tipo_usuario
@@ -42,7 +40,7 @@ class Usuario:
     def listado_usuarios():
         conexion = Conexion.conectar()
         cursor = conexion.cursor()
-        sql = "SELECT id_usuario, usuario, tipo_usuario FROM usuarios WHERE deleted = 0 ORDER BY usuario ASC"
+        sql = "SELECT id_usuario, usuario, tipo_usuario FROM usuarios WHERE deleted = 0 ORDER BY id_usuario ASC"
         cursor.execute(sql)
         usuarios = cursor.fetchall()
         cursor.close()
