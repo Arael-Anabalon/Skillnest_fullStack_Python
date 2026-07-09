@@ -3,7 +3,11 @@ from conexion import Conexion
 
 class Usuario:
 
+<<<<<<< HEAD:python/fundamentos/extras/00_repaso_sql-python/usuarios.py
     def __init__(self, usuario=None, contrasena=None, tipo_usuario=1, created_by="Admin"):
+=======
+    def __init__(self, usuario=None, contrasena=None, tipo_usuario = 1, created_by="Admin"):
+>>>>>>> 0a35fa5375d95d49d6b569fabaf79bdf3d26d9a4:python/fundamentos/extras/00_sistema_usuarios-repaso/python/usuarios.py
         self.username = usuario
         self.password = contrasena
         self.tipo_usuario = tipo_usuario
@@ -40,7 +44,7 @@ class Usuario:
     def listado_usuarios():
         conexion = Conexion.conectar()
         cursor = conexion.cursor()
-        sql = "SELECT id_usuario, usuario, tipo_usuario FROM usuarios WHERE deleted = 0 ORDER BY usuario ASC"
+        sql = "SELECT id_usuario, usuario, tipo_usuario FROM usuarios WHERE deleted = 0 ORDER BY id_usuario ASC"
         cursor.execute(sql)
         usuarios = cursor.fetchall()
         cursor.close()
