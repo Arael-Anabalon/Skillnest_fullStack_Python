@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="araelanabalon@liceovvh.cl">
+    <title>Jugador</title>
+</head>
+
+<body>
+
+    <nav>
+        <p>Bienvenido</p>
+    </nav>
+
+    <h5>Información del Jugador</h5>
+    <p>Nickname : {{ jugador }}</p>
+    <p>Puntaje : {{ puntaje }}</p>
+
+    <h5>Estado en la Tabla</h5>
+    {% if lider %}
+    <p>Eres el lider actual</p>
+    {% else %}
+    <p>Sigue jugando para subir de puesto</p>
+    {% endif %}
+
+</body>
+
+</html>

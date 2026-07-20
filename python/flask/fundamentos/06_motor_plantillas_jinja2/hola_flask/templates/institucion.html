@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="araelanabalon@liceovvh.cl">
+    <title>Institución</title>
+</head>
+
+<body>
+
+    <nav>
+        <p>Rol:
+            {% if es_docente %}
+            Profesor
+            {% else %}
+            Estudiante
+            {% endif %}
+        </p>
+    </nav>
+
+    <h5>Ficha Institucional</h5>
+    <p>Nombre : {{ nombre | default("[Vacio]") }}</p>
+    <p>Apellido : {{ apellido | default("[Vacio]") }}</p>
+    <p>Curso : {{ curso | default("[Vacio]") }}</p>
+    <p>Institución : {{ institucion | default("[Vacio]") }}</p>
+    <p>Año : {{ anio }}</p>
+
+    <h5>For con arreglo</h5>
+    <ul>
+        {% for tecnologia in tecnologias %}
+        <li>{{ tecnologia }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>
