@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="araelanabalon@liceovvh.cl">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-top">
+                <img src="{{ url_for('static', filename = 'img/pokeball.jfif') }}" alt="Logo">
+                <h1>Pokédex</h1>
+            </div>
+            <div class="nav-bottom">
+                <p>Todos los Pokémon</p>
+                <div class="nav-options">
+                    <button><i class="bi bi-list-ul"></i>Ver todos</button>
+                    <button><i class="bi bi-funnel-fill"></i>Ver 5 primeros</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <ul>
+            {% for pokemon in pokedex %}
+            <li>
+                <div class="poke">
+                    <div class="poke-img">
+                        <img src="{{ url_for('static', filename = 'img/{{ pokemon.imagen }}') }}"
+                            alt="Imagen de {{ pokemon.nombre }}">
+                    </div>
+                    <div class="poke-title">
+                        <h2>#{{ pokemon.id }} - {{ pokemon.nombre }}</h2>
+                    </div>
+                    <div class="poke-types">
+                        <span>{{ pokemon.tipo }}</span>
+                    </div>
+                    <div class="poke-power">
+                        <div class="power">
+                            <h4>Poder</h4>
+                            <span>{{ pokemon.poder }}</span>
+                        </div>
+                    </div>
+                    <div class="poke-height-weight">
+                        <div class="height">
+                            <h4>Altura</h4>
+                            <span>{{ pokemon.altura }}</span>
+                        </div>
+                        <div class="weight">
+                            <h4>Peso</h4>
+                            <span>{{ pokemon.peso }}</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+    </main>
+</body>
+
+</html>
