@@ -16,11 +16,29 @@ pokedex = [
    {"id": 143, "nombre": "Snorlax", "tipo": "Normal", "imagen": "snorlax.png", "poder": 160, "altura": "2.1m", "peso": "460.0kg"}
 ]
 
+colores_pokemon = {
+    "Planta": "#78C850",
+    "Veneno": "#A040A0",
+    "Fuego": "#F08030",
+    "Agua": "#6890F0",
+    "Eléctrico": "#F7D030",
+    "Normal": "#A8A878",
+    "Hada": "#EE99AC",
+    "Fantasma": "#705898",
+    "Roca": "#B8A038",
+    "Tierra": "#E0C068"
+}
+
+texto_pokemon = {
+    "Eléctrico": "#000000",  # Negro para fondo amarillo claro
+    "Tierra": "#000000"     # Negro para fondo arena claro
+}
 
 # Ruta para mostrar todos los Pokémon
+@app.route("/")
 @app.route("/pokemon")
 def mostrar_pokemon():
-    return render_template("pokemon.html", pokedex = pokedex)
+    return render_template("pokemon.html", pokedex = pokedex, colores = colores_pokemon, texto = texto_pokemon)
 
 # Ruta para mostrar un Pokémon por nombre
 @app.route("/pokemon/<string:nombre>")
