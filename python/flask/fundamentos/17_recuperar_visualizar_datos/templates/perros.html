@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Perros</title>
+
+</head>
+
+<body>
+
+    <h1>Los Perros</h1>
+
+
+    <!-- ==================================================
+         COMPROBAR SI EXISTEN MASCOTAS
+    =================================================== -->
+
+    {% if los_perros %}
+
+
+        <!-- ==================================================
+             RECORRER MASCOTAS
+        =================================================== -->
+
+        {% for una_mascota in los_perros %}
+
+            <div>
+
+                <p>
+
+                    <b>Nombre:</b>
+                    {{ una_mascota.nombre }}
+
+                    <br>
+
+                    <b>Tipo:</b>
+                    {{ una_mascota.tipo }}
+
+                    <br>
+
+                    <b>Color:</b>
+                    {{ una_mascota.color }}
+
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+
+    {% else %}
+
+
+        <!-- ==================================================
+             SIN REGISTROS
+        =================================================== -->
+
+        <p>
+
+            No existen perros registrados.
+
+        </p>
+
+
+    {% endif %}
+
+</body>
+
+</html>
