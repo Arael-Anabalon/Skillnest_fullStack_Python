@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Mascotas</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        .formulario { margin-bottom: 30px; padding: 20px; border: 1px solid #ccc; max-width: 300px; }
+        .formulario div { margin-bottom: 10px; }
+        label { display: block; }
+        table { border-collapse: collapse; width: 500px; }
+        th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <h1>Agregar nueva mascota</h1>
+    <div class="formulario">
+        <form action="/crear_mascota" method="POST">
+            <div>
+                <label>Nombre:</label>
+                <input type="text" name="nombre" required>
+            </div>
+            <div>
+                <label>Tipo:</label>
+                <input type="text" name="tipo" required>
+            </div>
+            <div>
+                <label>Color:</label>
+                <input type="text" name="color" required>
+            </div>
+            <button type="submit">Guardar Mascota</button>
+        </form>
+    </div>
+
+    <h1>Lista de Mascotas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for m in mascotas %}
+            <tr>
+                <td>{{ m.id }}</td>
+                <td>{{ m.nombre }}</td>
+                <td>{{ m.tipo }}</td>
+                <td>{{ m.color }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
