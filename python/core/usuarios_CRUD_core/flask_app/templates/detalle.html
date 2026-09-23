@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario {{ usuario.id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="tarjeta-detalle">
+            <h1>Usuario {{ usuario.id }}</h1>
+            <p class="text-muted">Información completa del usuario.</p>
+            <hr>
+
+            <div class="info-usuario">
+                <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+                <p><strong>Apellido:</strong> {{ usuario.apellido }}</p>
+                <p><strong>Nombre Completo:</strong> {{ usuario.nombre }} {{ usuario.apellido }}</p>
+                <p><strong>E-mail:</strong> {{ usuario.email }}</p>
+                <p><strong>Fecha Creación:</strong> {{ usuario.created_at }}</p>
+                <p><strong>Fecha Actualización:</strong> {{ usuario.updated_at }}</p>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+                <a href="{{ url_for('editar', id=usuario.id) }}" class="btn btn-warning">Editar</a>
+                <a href="{{ url_for('borrar', id=usuario.id) }}" class="btn btn-danger"
+                    onclick="return confirm('¿Estás seguro de eliminar este usuario?');">Borrar</a>
+                <a href="{{ url_for('usuarios') }}" class="btn btn-outline-secondary">Volver</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
