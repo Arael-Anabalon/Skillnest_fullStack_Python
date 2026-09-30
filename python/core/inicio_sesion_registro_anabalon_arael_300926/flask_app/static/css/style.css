@@ -1,0 +1,27 @@
+/* Fondo general de la aplicación */
+body {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Estilos adicionales para las tarjetas de los formularios */
+.card {
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* Enlaces personalizados */
+a {
+    color: #0d6efd;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0a58ca;
+}
